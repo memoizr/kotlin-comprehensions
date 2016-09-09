@@ -1,0 +1,28 @@
+buildscript {
+    ext.KOTLIN_VERSION = "1.1-M01"
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url "https://dl.bintray.com/kotlin/kotlin-eap-1.1" }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$KOTLIN_VERSION"
+    }
+}
+group 'com.memoizr'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'kotlin'
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+    maven { url "https://dl.bintray.com/kotlin/kotlin-eap-1.1" }
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile 'com.github.memoizr:assertk-core:0.1.0'
+}
